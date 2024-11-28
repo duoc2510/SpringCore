@@ -1,0 +1,112 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.fa.web</groupId>
+    <artifactId>Spring-core</artifactId>
+    <packaging>war</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>SpringCore</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+    </properties>
+    <dependencies>
+        <!-- Spring Core Dependency -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.1.0.RELEASE</version>
+        </dependency>
+        <!--Chức năng: Cung cấp các thành phần cốt lõi của Spring Framework, bao gồm các module hỗ trợ phát triển ứng dụng MVC.-->
+        <!-- Spring Web MVC Dependency -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.3.29</version>
+        </dependency>
+        <!--Chức năng: Hỗ trợ việc phát triển ứng dụng dựa trên mô hình Spring MVC, cho phép xử lý request/response và kết nối với các view.-->
+        <!-- Spring Data JPA Dependency -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>2.5.10</version>
+        </dependency>
+        <!--Chức năng: Hỗ trợ tích hợp với JPA, giúp làm việc với cơ sở dữ liệu dễ dàng hơn thông qua các repository (DAO tự động).-->
+        <!-- Spring ORM Dependency for JPA Integration -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>5.3.29</version>
+        </dependency>
+        <!--Chức năng: Cung cấp hỗ trợ cho JPA và các ORM frameworks khác (như Hibernate) trong Spring.-->
+        <!-- Hibernate JPA Implementation -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.32.Final</version>
+        </dependency>
+        <!--Chức năng: Thư viện cốt lõi của Hibernate, một framework ORM để tương tác với cơ sở dữ liệu qua các thực thể (entity).-->
+        <!-- SQL Server Connector -->
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>9.4.0.jre8</version>
+        </dependency>
+        <!--Chức năng: Cung cấp driver JDBC để kết nối Java với cơ sở dữ liệu Microsoft SQL Server.-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--Chức năng: Cung cấp API Servlet để xử lý request/response trong ứng dụng web.-->
+        <!--Scope: provided nghĩa là thư viện này sẽ được container cung cấp (như Tomcat), không cần đóng gói vào file WAR.-->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.1.0.Final</version>
+        </dependency>
+        <!--Chức năng: Định nghĩa các API để xác thực dữ liệu (validation), thường dùng với Hibernate Validator.-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.4.2.Final</version>
+        </dependency>
+        <!--Chức năng: Thực thi các API xác thực dữ liệu được định nghĩa trong validation-api.-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <!--Chức năng: Hỗ trợ sử dụng JSTL (JavaServer Pages Standard Tag Library) để đơn giản hóa việc xử lý logic trong JSP.-->
+        <!-- Apache Commons DBCP2 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+        <!--Chức năng: Cung cấp các class để quản lý connection pool (kết nối cơ sở dữ liệu hiệu quả), bao gồm class BasicDataSource.-->
+    </dependencies>
+    <build>
+        <finalName>spring-mvc-blank</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <compilerArgs>
+                        <arg>-Xlint</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
